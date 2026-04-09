@@ -1,0 +1,30 @@
+@use "sass:map";
+
+// mq
+// min-width breakpoints
+// on retranche 0.01em pour les max-width
+$breakpoints: (
+  xs: 0,
+  sm: 36em, // 576
+  md: 48em, // 768
+  lg: 62em, // 992
+  xl: 78em, // 1248
+);
+
+@mixin min($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin max($bp) {
+  @media (max-width: map.get($breakpoints, $bp) - 0.01em) {
+    @content;
+  }
+}
+
+@mixin between($from, $to) {
+  @media (min-width: map.get($breakpoints, $from)) and (max-width: map.get($breakpoints, $to) - 0.01em) {
+    @content;
+  }
+}
