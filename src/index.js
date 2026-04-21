@@ -4,8 +4,9 @@ import CgfrModal from './components/CgfrModal.vue';
 import CgfrModalTheme from './components/CgfrModalTheme.vue';
 import CgfrModalCookies from './components/CgfrModalCookies.vue';
 import CgfrSqlEditor from './components/CgfrSqlEditor.vue';
+import CgfrFollow from './components/CgfrFollow.vue';
 
-export { CgfrHeader, CgfrFooter, CgfrModal, CgfrModalTheme, CgfrModalCookies, CgfrSqlEditor };
+export { CgfrHeader, CgfrFooter, CgfrModal, CgfrModalTheme, CgfrModalCookies, CgfrSqlEditor, CgfrFollow };
 
 export default {
   install(app) {
@@ -15,5 +16,6 @@ export default {
     app.component('CgfrModalTheme', CgfrModalTheme);
     app.component('CgfrModalCookies', CgfrModalCookies);
     app.component('CgfrSqlEditor', CgfrSqlEditor);
+    app.component('CgfrFollow', CgfrFollow);
   },
 };
