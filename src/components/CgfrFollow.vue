@@ -1,34 +1,46 @@
 <script setup>
 import { computed, ref, useAttrs } from 'vue';
-import { DsfrNewsLetter } from '@gouvminint/vue-dsfr';
+import { DsfrNewsLetter, DsfrFollow } from '@gouvminint/vue-dsfr';
 
 const props = defineProps({
   open: {
     type: Boolean,
     default: false,
   },
-  baseUrl: {
+  newsletterUrl: {
     type: String,
     default: undefined,
   },
 });
 
-
+function openNewsletter() {
+  window.open(props.newsletterUrl, '_blank');
+}
 </script>
 
 <template>
   <DsfrFollow
   v-show="open">
+  <div class="fr-col">
     <DsfrNewsLetter
     title="Inscrivez-vous à notre lettre d’information"
     description="Retrouvez toutes les actualités directement par courriel chaque trimestre."
     buttonText="S'inscrire"
     placeholder="Votre email"
     onlyCallout
+    @click="openNewsletter"
     />
-    <div>
-        <h3></h3>
-    </div>
+  </div>
+  <div class="fr-col">
+      <h3 class="fr-h5 fr-follow__title">
+        Communauté
+      </h3>
+      <p class="fr-text--sm fr-follow__desc">
+        Rejoignez la communauté Géoplateforme - cartes.gouv.fr pour suivre les actualités et échanger avec les membres.
+      </p>
+      <a class="fr-link" target="_blank" href="https://www.expertises-territoires.fr/jcms/pl1_557493/fr/communaute-geoplateforme-et-cartes-gouv">Rejoindre la communauté</a>
+  </div>
+
   </DsfrFollow>
 </template>
 

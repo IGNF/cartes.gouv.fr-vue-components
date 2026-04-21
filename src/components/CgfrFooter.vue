@@ -2,6 +2,7 @@
 import { computed, ref, useAttrs } from 'vue';
 import { DsfrButton, DsfrFooter } from '@gouvminint/vue-dsfr';
 import { getFooterDefaults } from './CgfrFooter.defaults.js';
+import CgfrFollow from './CgfrFollow.vue';
 
 const props = defineProps({
   compact: {
@@ -58,6 +59,7 @@ const footerProps = computed(() => {
 </script>
 
 <template>
+  <CgfrFollow :open="open" :newsletter-url="footerProps.newsletterUrl" />
   <div class="cgfr-footer">
     <DsfrButton
       v-if="compact"
