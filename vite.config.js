@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'node:path';
+import pkg from './package.json'
 
 export default defineConfig({
   plugins: [vue()],
@@ -12,7 +13,9 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['vue', '@gouvminint/vue-dsfr', '@gouvfr/dsfr'],
+      external: [
+        ...Object.keys(pkg.peerDependencies || {}),
+      ]
     },
   },
 });
