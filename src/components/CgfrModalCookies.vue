@@ -2,7 +2,7 @@
 import { useModals } from '../composables/useModals';
 import CgfrModal from './CgfrModal.vue';
 import { DsfrConsent } from '@gouvminint/vue-dsfr';
-import { ref, onMounted } from 'vue';
+import { ref, onUpdated } from 'vue';
 
 const emit = defineEmits(['accept-consent', 'refuse-consent', 'close-consent']);
 
@@ -15,22 +15,22 @@ const url = '/donnees-personnelles';
 const onAcceptConsentAll = () => {
   emit('accept-consent');
   modals.close('cookies');
-}
+};
 const onRefuseConsentAll = () => {
   emit('refuse-consent');
   modals.close('cookies');
-}
+};
 
 onUpdated(() => {
   if (refConsent.value) {
     // HACK vuedsfr
     var btn = refConsent.value.querySelector('button[title="Refuser tous les cookies"]');
-    console.log(btn)
-    btn.classList.add("fr-btn--secondary");
+    console.log(btn);
+    btn.classList.add('fr-btn--secondary');
     var ul = refConsent.value.querySelector('ul');
-    ul.classList.replace("fr-btns-group--inline-reverse", "fr-btns-group--inline");
+    ul.classList.replace('fr-btns-group--inline-reverse', 'fr-btns-group--inline');
   }
-})
+});
 </script>
 
 <template>
@@ -44,14 +44,8 @@ onUpdated(() => {
       navigation ne sera pas affectée.
     </div>
     <div>
-      <p 
-        id="my-consent-buttons"
-        ref="refConsent"
-      >
-        <DsfrConsent 
-          @accept-all="onAcceptConsentAll()" 
-          @refuse-all="onRefuseConsentAll()"
-        >
+      <p id="my-consent-buttons" ref="refConsent">
+        <DsfrConsent @accept-all="onAcceptConsentAll()" @refuse-all="onRefuseConsentAll()">
           Préférences pour tous les services.
           <a :href="url">Données personnelles et cookies</a>
         </DsfrConsent>
@@ -64,7 +58,7 @@ onUpdated(() => {
 /* Surcharge sur le composant DsfrConsent : 
   > on n'affiche pas le bouton 'Personnaliser les cookies' 
 */
-#my-consent-buttons button[title="Personnaliser les cookies"] {
+#my-consent-buttons button[title='Personnaliser les cookies'] {
   display: none;
 }
 #my-consent-description {
