@@ -37,11 +37,15 @@ onUpdated(() => {
   <CgfrModal v-if="modals.isOpen('cookies')" name="cookies" title="Panneau de gestion des cookies">
     <div id="my-consent-description">
       <h5>Eulerian Analytics</h5>
-      En cliquant sur 'Tout accepter', vous consentez à l'utilisation des cookies pour nous aider à
-      améliorer notre site web en collectant et en rapportant des informations sur votre utilisation
-      grâce à Eulerian Analytics. <br />
-      Si vous n'êtes pas d'accord, veuillez cliquer sur 'Tout refuser'. Votre expérience de
-      navigation ne sera pas affectée.
+      <p>
+        En cliquant sur « Tout accepter », vous consentez à l’utilisation des cookies pour nous
+        aider à améliorer notre site web en collectant et en rapportant des informations sur votre
+        utilisation grâce à Eulerian Analytics.
+      </p>
+      <p>
+        Si vous n’êtes pas d’accord, veuillez cliquer sur « Tout refuser ». Votre expérience de
+        navigation ne sera pas affectée.
+      </p>
     </div>
     <div>
       <p id="my-consent-buttons" ref="refConsent">

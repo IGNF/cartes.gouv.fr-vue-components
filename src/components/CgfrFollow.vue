@@ -23,7 +23,7 @@ function openNewsletter() {
       <DsfrNewsLetter
         title="Inscrivez-vous à notre lettre d’information"
         description="Retrouvez toutes les actualités directement par courriel chaque trimestre."
-        button-text="S'inscrire"
+        button-text="S’inscrire"
         placeholder="Votre email"
         only-callout
         @click="openNewsletter"
