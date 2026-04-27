@@ -4,6 +4,8 @@ import { DsfrHeader, useScheme } from '@gouvminint/vue-dsfr';
 import CgfrHeaderNavigation from './CgfrHeaderNavigation.vue';
 import { getHeaderDefaults } from './CgfrHeader.defaults.js';
 
+defineEmits(['login', 'logout']);
+
 const { theme } = useScheme();
 
 const props = defineProps({
@@ -97,7 +99,11 @@ onMounted(() => {
         :items="headerProps.items"
         :authenticated="authenticated"
         :user="user"
+        @login="$emit('login')"
+        @logout="$emit('logout')"
       />
+      {{ authenticated  }}
+      {{ user  }}
       <slot />
     </template>
   </DsfrHeader>

@@ -21,6 +21,8 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(['login', 'logout']);
+
 const expandedMenuId = ref(undefined);
 
 // INFO
@@ -81,6 +83,8 @@ onUnmounted(() => {
         :authenticated="authenticated"
         :user="user"
         @toggle-id="toggle($event)"
+        @login="emit('login')"
+        @logout="emit('logout')"
       />
     </ul>
   </nav>
