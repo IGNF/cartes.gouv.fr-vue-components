@@ -83,5 +83,6 @@ export function getFooterDefaults(options = {}) {
         },
       ],
     },
+    newsletterUrl: buildBaseUrl(baseUrl, '/lettre-d-information'),
   };
 }
