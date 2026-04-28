@@ -26,9 +26,11 @@ const props = defineProps({
 });
 
 // INFO
-// Émettre l'événement toggleId au parent
-const emit = defineEmits(['toggleId']);
+// Émettre les événements au parent
+const emit = defineEmits(['toggleId', 'login', 'logout']);
 const toggleId = (id) => emit('toggleId', id);
+const handleLogin = () => emit('login');
+const handleLogout = () => emit('logout');
 
 const button = ref(null);
 const { collapse, cssExpanded, doExpand } = useCollapsable();
@@ -60,7 +62,7 @@ onBeforeUnmount(() => {});
       icon="ri-account-circle-fill"
       class="fr-nav__btn fr-nav__btn-no-dropdown"
     >
-      <a :href="menu.urls.login.url">{{ menu.urls.login.text }}</a>
+      <a :href="menu.urls.login.url" @click="handleLogin">{{ menu.urls.login.text }}</a>
     </DsfrButton>
     <DsfrButton
       v-else
@@ -129,8 +131,8 @@ onBeforeUnmount(() => {});
                 class="fr-m-3v fr-icon-logout-box-r-line fr-btn fr-btn--tertiary fr-btn--icon-left w100 justify-center"
               >
                 <i class="ri-logout-box-line" />
-                <a v-if="authenticated" :href="menu.urls.logout.url">{{ menu.urls.logout.text }}</a>
-                <a v-else :href="menu.urls.login.url">{{ menu.urls.login.text }}</a>
+                <a v-if="authenticated" :href="menu.urls.logout.url" @click="handleLogout">{{ menu.urls.logout.text }}</a>
+                <a v-else :href="menu.urls.login.url" @click="handleLogin">{{ menu.urls.login.text }}</a>
               </button>
             </div>
           </div>
