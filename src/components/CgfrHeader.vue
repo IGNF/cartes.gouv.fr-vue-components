@@ -102,8 +102,6 @@ onMounted(() => {
         @login="$emit('login')"
         @logout="$emit('logout')"
       />
-      {{ authenticated  }}
-      {{ user  }}
       <slot />
     </template>
   </DsfrHeader>
