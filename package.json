@@ -36,7 +36,8 @@
   "peerDependencies": {
     "@gouvfr/dsfr": "^1.14.4",
     "@gouvminint/vue-dsfr": "^8.16.1",
-    "vue": "^3.5.0"
+    "vue": "^3.5.0",
+    "@vueuse/core": "^13 || ^14"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -53,7 +54,6 @@
   },
   "dependencies": {
     "@codemirror/lang-sql": "^6.10.0",
-    "@vueuse/core": "^14.2.1",
     "codemirror": "^6.0.2"
   }
 }
