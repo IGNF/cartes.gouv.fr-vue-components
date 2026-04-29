@@ -13,7 +13,10 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: [...Object.keys(pkg.peerDependencies || {})],
+      external: [
+        ...Object.keys(pkg.peerDependencies || {}),
+        /^@codemirror\//,
+      ],
     },
   },
 });
