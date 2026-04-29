@@ -16,6 +16,14 @@ export function buildBaseUrl(baseUrl, path) {
   return `${baseUrl}${normalizedPath}`;
 }
 
+export function getCurrentUrl(baseUrl) {
+  if (typeof window !== 'undefined' && window.location?.href) {
+    return window.location.href;
+  }
+
+  return buildBaseUrl(baseUrl || DEFAULT_BASE_URL, '/');
+}
+
 export function useBaseUrl(baseUrl) {
   return baseUrl || DEFAULT_BASE_URL;
 }
