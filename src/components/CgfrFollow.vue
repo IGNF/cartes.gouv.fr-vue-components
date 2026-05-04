@@ -18,8 +18,9 @@ function openNewsletter() {
 </script>
 
 <template>
-  <DsfrFollow v-show="open">
-    <div class="fr-col">
+  <DsfrFollow
+  :class="`${props.open ? '' : 'fr-hidden-lg'}`">
+    <div class="mb-6v">
       <DsfrNewsLetter
         title="Inscrivez-vous à notre lettre d’information"
         description="Retrouvez toutes les actualités directement par courriel chaque trimestre."
@@ -47,4 +48,10 @@ function openNewsletter() {
 
 <style lang="scss">
 @use '../assets/mq' as *;
+
+@media (max-width: 991px) {
+  .mb-6v {
+    margin-bottom: 1.5rem;/* tes styles ici */
+  }
+}
 </style>
