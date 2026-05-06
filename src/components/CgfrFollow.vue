@@ -18,8 +18,7 @@ function openNewsletter() {
 </script>
 
 <template>
-  <DsfrFollow
-  :class="`${props.open ? '' : 'fr-hidden-lg'}`">
+  <DsfrFollow :class="`${props.open ? '' : 'fr-hidden-lg'}`">
     <div class="mb-6v">
       <DsfrNewsLetter
         title="Inscrivez-vous à notre lettre d’information"
@@ -51,7 +50,7 @@ function openNewsletter() {
 
 @media (max-width: 991px) {
   .mb-6v {
-    margin-bottom: 1.5rem;/* tes styles ici */
+    margin-bottom: 1.5rem; /* tes styles ici */
   }
 }
 </style>
