@@ -131,8 +131,12 @@ onBeforeUnmount(() => {});
                 class="fr-m-3v fr-icon-logout-box-r-line fr-btn fr-btn--tertiary fr-btn--icon-left w100 justify-center"
               >
                 <i class="ri-logout-box-line" />
-                <a v-if="authenticated" :href="menu.urls.logout.url" @click="handleLogout">{{ menu.urls.logout.text }}</a>
-                <a v-else :href="menu.urls.login.url" @click="handleLogin">{{ menu.urls.login.text }}</a>
+                <a v-if="authenticated" :href="menu.urls.logout.url" @click="handleLogout">{{
+                  menu.urls.logout.text
+                }}</a>
+                <a v-else :href="menu.urls.login.url" @click="handleLogin">{{
+                  menu.urls.login.text
+                }}</a>
               </button>
             </div>
           </div>
