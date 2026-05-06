@@ -24,9 +24,9 @@ function openNewsletter() {
         title="Inscrivez-vous à notre lettre d’information"
         description="Retrouvez toutes les actualités directement par courriel chaque trimestre."
         button-text="S’inscrire"
+        :button-action="openNewsletter"
         placeholder="Votre email"
         only-callout
-        @click="openNewsletter"
       />
     </div>
     <div class="fr-col">
