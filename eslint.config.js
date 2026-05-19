@@ -31,4 +31,11 @@ export default [
       'prettier/prettier': 'error',
     },
   },
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'no-irregular-whitespace': 'off',
+      'vue/no-irregular-whitespace': 'off',
+    },
+  },
 ];

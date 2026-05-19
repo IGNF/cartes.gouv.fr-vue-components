@@ -18,16 +18,15 @@ function openNewsletter() {
 </script>
 
 <template>
-  <DsfrFollow
-  :class="`${props.open ? '' : 'fr-hidden-lg'}`">
+  <DsfrFollow :class="{ 'fr-hidden-lg': !props.open }">
     <div class="mb-6v">
       <DsfrNewsLetter
         title="Inscrivez-vous à notre lettre d’information"
         description="Retrouvez toutes les actualités directement par courriel chaque trimestre."
         button-text="S’inscrire"
+        :button-action="openNewsletter"
         placeholder="Votre email"
         only-callout
-        @click="openNewsletter"
       />
     </div>
     <div class="fr-col">
@@ -49,9 +48,19 @@ function openNewsletter() {
 <style lang="scss">
 @use '../assets/mq' as *;
 
-@media (max-width: 991px) {
+@include max(lg) {
   .mb-6v {
-    margin-bottom: 1.5rem;/* tes styles ici */
+    margin-bottom: 1.5rem;
+  }
+}
+
+// force le style md jusqu'a lg
+@include between(md, lg) {
+  .fr-follow .fr-grid-row > :not(:first-child) {
+    box-shadow: 0 -1px 0 0 var(--border-default-blue-france);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    padding-left: 0;
   }
 }
 </style>
