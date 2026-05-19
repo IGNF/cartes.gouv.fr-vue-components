@@ -48,9 +48,9 @@ function openNewsletter() {
 <style lang="scss">
 @use '../assets/mq' as *;
 
-@media (max-width: 991px) {
+@include max(lg) {
   .mb-6v {
-    margin-bottom: 1.5rem; /* tes styles ici */
+    margin-bottom: 1.5rem;
   }
 }
 </style>
