@@ -53,4 +53,14 @@ function openNewsletter() {
     margin-bottom: 1.5rem;
   }
 }
+
+// force le style md jusqu'a lg
+@include between(md, lg) {
+  .fr-follow .fr-grid-row > :not(:first-child) {
+    box-shadow: 0 -1px 0 0 var(--border-default-blue-france);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    padding-left: 0;
+  }
+}
 </style>
