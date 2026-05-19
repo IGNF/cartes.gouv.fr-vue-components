@@ -18,7 +18,7 @@ function openNewsletter() {
 </script>
 
 <template>
-  <DsfrFollow :class="`${props.open ? '' : 'fr-hidden-lg'}`">
+  <DsfrFollow :class="{ 'fr-hidden-lg': !props.open }">
     <div class="mb-6v">
       <DsfrNewsLetter
         title="Inscrivez-vous à notre lettre d’information"
