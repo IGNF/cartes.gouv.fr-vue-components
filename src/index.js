@@ -1,3 +1,4 @@
+// components
 import CgfrHeader from './components/CgfrHeader.vue';
 import CgfrFooter from './components/CgfrFooter.vue';
 import CgfrModal from './components/CgfrModal.vue';
@@ -5,6 +6,9 @@ import CgfrModalTheme from './components/CgfrModalTheme.vue';
 import CgfrModalCookies from './components/CgfrModalCookies.vue';
 import CgfrSqlEditor from './components/CgfrSqlEditor.vue';
 import CgfrFollow from './components/CgfrFollow.vue';
+
+// composables
+import { useModals } from './composables/useModals';
 
 export {
   CgfrHeader,
@@ -14,6 +18,7 @@ export {
   CgfrModalCookies,
   CgfrSqlEditor,
   CgfrFollow,
+  useModals,
 };
 
 export default {
