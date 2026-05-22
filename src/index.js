@@ -5,6 +5,7 @@ import CgfrModalTheme from './components/CgfrModalTheme.vue';
 import CgfrModalCookies from './components/CgfrModalCookies.vue';
 import CgfrSqlEditor from './components/CgfrSqlEditor.vue';
 import CgfrFollow from './components/CgfrFollow.vue';
+import CgfrSelectList from './components/CgfrSelectList.vue';
 
 export {
   CgfrHeader,
@@ -14,6 +15,7 @@ export {
   CgfrModalCookies,
   CgfrSqlEditor,
   CgfrFollow,
+  CgfrSelectList,
 };
 
 export default {
@@ -25,5 +27,6 @@ export default {
     app.component('CgfrModalCookies', CgfrModalCookies);
     app.component('CgfrSqlEditor', CgfrSqlEditor);
     app.component('CgfrFollow', CgfrFollow);
+    app.component('CgfrSelectList', CgfrSelectList);
   },
 };
