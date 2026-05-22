@@ -180,7 +180,9 @@ const updatePanelPosition = () => {
     top: `${rect.bottom}px`,
     left: `${rect.left}px`,
     zIndex: '10000',
-    maxWidth: '400px',
+    width: `${rect.width}px`,
+    boxSizing: 'border-box',
+    minWidth: '400px',
   };
 };
 
@@ -225,11 +227,13 @@ watch(isOpen, async (value) => {
   if (value) {
     // Attend le rendu du panel téléporté, puis calcule sa position réelle à l'écran.
     await nextTick();
+    triggerRef.value?.focus({ preventScroll: true });
     updatePanelPosition();
     addOpenListeners();
     return;
   }
 
+  triggerRef.value?.blur();
   removeOpenListeners();
 });
 
