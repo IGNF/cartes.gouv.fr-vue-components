@@ -1,4 +1,4 @@
-import { useBaseUrl, buildBaseUrl } from '../composables/useBaseUrl';
+import { useBaseUrl, buildBaseUrl, getCurrentUrl } from '../composables/useBaseUrl';
 
 export function getHeaderDefaults(options = {}) {
   const baseUrl = useBaseUrl(options.baseUrl);
@@ -74,11 +74,11 @@ export function getHeaderDefaults(options = {}) {
       urls: {
         login: {
           text: 'Se connecter',
-          url: buildBaseUrl(baseUrl, '/login'),
+          url: getCurrentUrl(baseUrl),
         },
         logout: {
           text: 'Se déconnecter',
-          url: buildBaseUrl(baseUrl, '/logout'),
+          url: getCurrentUrl(baseUrl),
         },
       },
       links: [
