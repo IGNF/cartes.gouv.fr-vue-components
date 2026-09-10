@@ -29,6 +29,12 @@ export function getHeaderDefaults(options = {}) {
             icon: 'fr-icon-book-2-line',
           },
           {
+            text: 'Niveau de service',
+            to: buildBaseUrl(baseUrl, '/aide/fr/niveau-de-service/'),
+            target: '_blank',
+            icon: 'fr-icon-rfid-line',
+          },
+          {
             text: 'Nous contacter',
             to: buildBaseUrl(baseUrl, '/nous-ecrire'),
             target: '_blank',
