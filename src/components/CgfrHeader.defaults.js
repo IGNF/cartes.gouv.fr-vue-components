@@ -20,7 +20,7 @@ export function getHeaderDefaults(options = {}) {
             icon: 'fr-icon-question-mark',
           },
           {
-            text: "Guide d'utilisation",
+            text: 'Guide d’utilisation',
             to: buildBaseUrl(
               baseUrl,
               '/aide/fr/guides-utilisateur/visualiseur-cartographique/generalites-visualiseur/'
