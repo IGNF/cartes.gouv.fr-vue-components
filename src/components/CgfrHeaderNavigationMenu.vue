@@ -107,7 +107,7 @@ onBeforeUnmount(() => {});
             <div class="fr-grid-row fr-grid-row--center w100">
               <button
                 class="fr-m-3v fr-btn fr-btn--tertiary fr-btn--icon-right w100 justify-center"
-                :class="link.icon"
+                :class="[link.icon, { 'fr-btn--primary': link.primary }]"
               >
                 <a :href="link.to" :target="link.target">{{ link.text }}</a>
               </button>
@@ -182,13 +182,28 @@ a[target='_blank']::after {
   .fr-nav__btn {
     padding: 0.5rem;
   }
-  .fr-btn--tertiary {
-    box-shadow: inset 0 0 0 1px var(--border-default-grey);
-  }
   .fr-menu__list {
     margin: 0 -0.25rem;
     padding: 0 0 1rem;
   }
+}
+:is(.fr-header__tools-links, .fr-header__menu-links) .fr-btn--primary {
+  /* .fr-btn--primary n'existe pas dans le DSFR, mais on force le style .fr-btn pour les boutons inclus dans le header */
+  --text-spacing: 0;
+  --title-spacing: 0;
+  --underline-img: none;
+  --hover-tint: var(--hover);
+  --idle: transparent;
+  --hover: var(--background-action-high-blue-france-hover);
+  --active: var(--background-action-high-blue-france-active);
+  background-color: var(--background-action-high-blue-france);
+  color: var(--text-inverted-blue-france);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
 }
 </style>
 
