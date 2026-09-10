@@ -66,6 +66,7 @@ export function getHeaderDefaults(options = {}) {
             to: buildBaseUrl(baseUrl, '/decouvrir'),
             target: '_blank',
             button: true,
+            primary: true,
           },
         ],
       },
