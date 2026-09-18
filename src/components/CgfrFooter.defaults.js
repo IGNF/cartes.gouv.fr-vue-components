@@ -21,7 +21,7 @@ export function getFooterDefaults(options = {}) {
     ],
     mandatoryLinks: [
       {
-        label: 'Accessibilité : partiellement conforme',
+        label: 'Accessibilité : non conforme',
         href: buildBaseUrl(baseUrl, '/accessibilite'),
       },
       {
