@@ -1,7 +1,11 @@
 {
-  "name": "cartes.gouv.fr-vue-components",
+  "name": "@ignf/cartes.gouv.fr-vue-components",
   "private": false,
   "version": "1.0.1",
+  "publishConfig": {
+    "@ignf:registry": "https://npm.pkg.github.com",
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "files": [
     "dist"
