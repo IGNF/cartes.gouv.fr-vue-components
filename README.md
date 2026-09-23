@@ -55,14 +55,14 @@ npm install @gouvminint/vue-dsfr @gouvfr/dsfr vue
 ```js
 import '@gouvfr/dsfr/dist/dsfr/dsfr.min.css';
 import '@gouvminint/vue-dsfr/styles'
-import 'cartes.gouv.fr-vue-components/dist/index.css';
+import '@ignf/cartes.gouv.fr-vue-components/dist/index.css';
 ```
 
 ### 3. Utilisation dans `.vue`
 
 ```vue
 <script setup>
-import { CgfrHeader, CgfrFooter } from 'cartes.gouv.fr-vue-components';
+import { CgfrHeader, CgfrFooter } from '@ignf/cartes.gouv.fr-vue-components';
 </script>
 
 <template>
