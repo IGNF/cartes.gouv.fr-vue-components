@@ -43,12 +43,12 @@ npm install @ignf/cartes.gouv.fr-vue-components # (! registry GitHub)
 npm install @gouvminint/vue-dsfr @gouvfr/dsfr vue
 ```
 
-**Note:** Cette librairie est publiée sur le registry GitHub, il est donc nécessaire de configurer un Personal Access Token GitHub (PAT) et d’ajouter le scope `@ignf` dans votre `.npmrc`:
+  > **Note:** Cette librairie est publiée sur le registry GitHub, il est donc nécessaire de configurer un Personal Access Token GitHub (PAT) et d’ajouter le scope `@ignf` dans votre `.npmrc`:
+  > ```txt
+  > @ignf:registry=https://npm.pkg.github.com
+  > //npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxxxxx
+  > ```
 
-```ini
-@ignf:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxx
-```
 
 ### 2. Styles dans `main.js`
 
