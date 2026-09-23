@@ -39,8 +39,15 @@ npm link cartes.gouv.fr-vue-components
 ### 1. Installation
 
 ```bash
-npm install git+https://github.com/IGNF/cartes.gouv.fr-vue-components # branche main
+npm install @ignf/cartes.gouv.fr-vue-components # (! registry GitHub)
 npm install @gouvminint/vue-dsfr @gouvfr/dsfr vue
+```
+
+**Note:** Cette librairie est publiée sur le registry GitHub, il est donc nécessaire de configurer un Personal Access Token GitHub (PAT) et d’ajouter le scope `@ignf` dans votre `.npmrc`:
+
+```ini
+@ignf:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=ghp_xxxxxxxxxxxxxxx
 ```
 
 ### 2. Styles dans `main.js`
