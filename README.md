@@ -16,6 +16,21 @@ npm run build
 
 ---
 
+## Déploiement du package
+
+```bash
+# crée la version
+npm version [major|minor|patch] # modifie le package.json, crée un tag
+npm version preminor --preid=beta # ex pour une version prerelease
+
+# push avec le tag
+git push origin <branche> --follow-tags
+
+# le workflow github déclenche la création d'une release et la publication du package
+```
+
+----
+
 ## Développement local (npm link)
 
 ### 1. Dans ce repo (lib)
