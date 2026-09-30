@@ -39,12 +39,6 @@ export function getFooterDefaults(options = {}) {
     ],
     afterMandatoryLinks: [
       {
-        label: 'Gestion des cookies',
-        button: true,
-        to: '/',
-        onclick: () => modals.open('cookies'),
-      },
-      {
         label: 'Paramètres d’affichage',
         button: true,
         class: 'fr-icon-theme-fill fr-link--icon-left',
