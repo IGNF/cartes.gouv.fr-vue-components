@@ -81,11 +81,9 @@ export function getHeaderDefaults(options = {}) {
       urls: {
         login: {
           text: 'Se connecter',
-          url: buildBaseUrl(baseUrl, '/login'),
         },
         logout: {
           text: 'Se déconnecter',
-          url: buildBaseUrl(baseUrl, '/logout'),
         },
       },
       links: [

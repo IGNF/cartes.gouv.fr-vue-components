@@ -59,11 +59,11 @@ onBeforeUnmount(() => {});
     <DsfrButton
       v-if="menu.connexionMenu && !authenticated"
       ref="button"
+      :label="menu.urls.login.text"
       icon="ri-account-circle-fill"
       class="fr-nav__btn fr-nav__btn-no-dropdown"
-    >
-      <a :href="menu.urls.login.url" @click="handleLogin">{{ menu.urls.login.text }}</a>
-    </DsfrButton>
+      @click="handleLogin"
+    />
     <DsfrButton
       v-else
       ref="button"
@@ -128,15 +128,12 @@ onBeforeUnmount(() => {});
           <div class="flex">
             <div class="fr-grid-row fr-grid-row--center w100">
               <button
+                type="button"
                 class="fr-m-3v fr-icon-logout-box-r-line fr-btn fr-btn--tertiary fr-btn--icon-left w100 justify-center"
+                @click="authenticated ? handleLogout() : handleLogin()"
               >
                 <i class="ri-logout-box-line" />
-                <a v-if="authenticated" :href="menu.urls.logout.url" @click="handleLogout">{{
-                  menu.urls.logout.text
-                }}</a>
-                <a v-else :href="menu.urls.login.url" @click="handleLogin">{{
-                  menu.urls.login.text
-                }}</a>
+                {{ authenticated ? menu.urls.logout.text : menu.urls.login.text }}
               </button>
             </div>
           </div>
