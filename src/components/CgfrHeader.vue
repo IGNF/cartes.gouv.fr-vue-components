@@ -90,6 +90,7 @@ onMounted(() => {
     :service-title="headerProps.serviceTitle"
     :service-description="compact ? false : headerProps.serviceDescription"
     :operator-img-src="operatorImgSrc"
+    :operator-img-alt="headerProps.operatorImgAlt"
     :logo-text="compact ? [] : headerProps.logoText"
     :quick-links="headerProps.quickLinks"
     :class="{ 'fr-header--compact': compact }"
