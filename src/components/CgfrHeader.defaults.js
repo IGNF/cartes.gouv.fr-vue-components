@@ -7,6 +7,7 @@ export function getHeaderDefaults(options = {}) {
   let defaults = {
     serviceTitle: 'cartes.gouv.fr',
     serviceDescription: 'Notre territoire commun',
+    operatorImgAlt: 'Logo de cartes.gouv.fr',
     logoText: ['république', 'française'],
     items: [
       {
