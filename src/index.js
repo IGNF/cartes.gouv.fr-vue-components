@@ -6,6 +6,7 @@ import CgfrModalCookies from './components/CgfrModalCookies.vue';
 import CgfrSqlEditor from './components/CgfrSqlEditor.vue';
 import CgfrFollow from './components/CgfrFollow.vue';
 import CgfrSelectList from './components/CgfrSelectList.vue';
+import './assets/icons.scss';
 
 export {
   CgfrHeader,

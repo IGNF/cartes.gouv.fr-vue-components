@@ -31,9 +31,10 @@ export const Menu = {
     await expect(trigger).toHaveAttribute('aria-expanded', 'true');
     const guide = await canvas.findByRole('link', { name: 'Guide d’utilisation' });
     await expect(guide).toBeVisible();
-    const icon = guide.querySelector('.fr-icon-book-2-line');
-    await expect(icon).not.toBeNull();
-    await expect(getComputedStyle(icon, '::before').maskImage).toMatch(/^url\(/);
+    const extractionLink = await canvas.findByRole('link', { name: 'Extraire une donnée' });
+    await expect(extractionLink).toBeVisible();
+    await expect(extractionLink).toHaveClass('fr-icon-contacts-book-upload-line');
+    await expect(getComputedStyle(extractionLink, '::before').maskImage).toMatch(/^url\(/);
     await userEvent.click(trigger);
     await expect(trigger).toHaveAttribute('aria-expanded', 'false');
   },

@@ -1,6 +1,13 @@
 export const helpMenu = {
   title: 'Aide',
-  links: [{ text: 'Guide d’utilisation', to: '#guide', icon: 'fr-icon-book-2-line' }],
+  links: [
+    { text: 'Guide d’utilisation', to: '#guide', icon: 'fr-icon-book-2-line' },
+    {
+      text: 'Extraire une donnée',
+      to: '#extraire-une-donnee',
+      icon: 'fr-icon-contacts-book-upload-line',
+    },
+  ],
 };
 
 export const accountMenu = {
