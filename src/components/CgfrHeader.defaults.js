@@ -71,7 +71,7 @@ export function getHeaderDefaults(options = {}) {
           {
             text: 'Extraire une donnée',
             to: buildBaseUrl(baseUrl, '/extraire-une-donnee'),
-            icon: 'fr-icon-contacts-book-line',
+            icon: 'fr-icon-contacts-book-upload-line',
             beta: true
           },
           {
