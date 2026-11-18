@@ -71,11 +71,11 @@ export function getHeaderDefaults(options = {}) {
           {
             text: 'Extraire une donnée',
             to: buildBaseUrl(baseUrl, '/extraire-une-donnee'),
-            icon: 'fr-icon-contacts-book-upload-line',
+            icon: 'fr-icon-contacts-book-line',
             beta: true
           },
           {
-            text: 'Guichet collaboratif',
+            text: 'Contribuer aux données',
             to: buildBaseUrl(baseUrl, '/contribuer-aux-donnees'),
             icon: 'fr-icon-message-2-line',
             beta: true
@@ -83,7 +83,6 @@ export function getHeaderDefaults(options = {}) {
           {
             text: 'Découvrir cartes.gouv.fr ',
             to: buildBaseUrl(baseUrl, '/decouvrir'),
-            target: '_blank',
             button: true,
             primary: true,
           }

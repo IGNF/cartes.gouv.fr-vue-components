@@ -112,7 +112,7 @@ onBeforeUnmount(() => {});
             <div class="fr-grid-row fr-grid-row--center w100">
               <button
                 class="fr-m-3v fr-btn fr-btn--tertiary fr-btn--icon-right w100 justify-center"
-                :class="[link.icon, { 'fr-btn--primary': link.primary }]"
+                :class="[{ 'fr-btn--primary': link.primary }]"
               >
                 <a :href="link.to" :target="link.target">{{ link.text }}</a>
               </button>
@@ -123,15 +123,15 @@ onBeforeUnmount(() => {});
             :id="idx"
             :href="link.to"
             :target="link.target"
-            class="fr-link--icon-left fr-access__link fr-nav__link flex-start"
+            class="fr-link--icon-left fr-access__link fr-nav__link flex space-between"
             :class="link.icon"
           >
-            {{ link.text }}
+            <span>{{ link.text }}</span>
             <DsfrBadge
               v-if="link.beta"
               label="BETA"
-              type="standard"
-              color-accent="green-emeraude"
+              type="success"
+              no-icon
             />
           </a>
         </DsfrNavigationMenuItem>
@@ -155,8 +155,10 @@ onBeforeUnmount(() => {});
 </template>
 
 <style scoped lang="scss">
-.flex-start {
-  justify-content: flex-start;
+
+.space-between {
+  align-items: center;
+  justify-content: space-between;
 }
 .justify-center {
   justify-content: center;
