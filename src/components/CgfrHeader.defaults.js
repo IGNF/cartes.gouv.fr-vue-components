@@ -63,12 +63,30 @@ export function getHeaderDefaults(options = {}) {
             icon: 'fr-icon-database-line',
           },
           {
+            text: 'Créer une carte',
+            to: buildBaseUrl(baseUrl, '/creer-une-carte'),
+            icon: 'fr-icon-brush-line',
+            beta: true
+          },
+          {
+            text: 'Extraire une donnée',
+            to: buildBaseUrl(baseUrl, '/extraire-une-donnee'),
+            icon: 'fr-icon-contacts-book-upload-line',
+            beta: true
+          },
+          {
+            text: 'Guichet collaboratif',
+            to: buildBaseUrl(baseUrl, '/contribuer-aux-donnees'),
+            icon: 'fr-icon-message-2-line',
+            beta: true
+          },
+          {
             text: 'Découvrir cartes.gouv.fr ',
             to: buildBaseUrl(baseUrl, '/decouvrir'),
             target: '_blank',
             button: true,
             primary: true,
-          },
+          }
         ],
       },
     ],
