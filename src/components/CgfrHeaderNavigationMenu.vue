@@ -123,16 +123,11 @@ onBeforeUnmount(() => {});
             :id="idx"
             :href="link.to"
             :target="link.target"
-            class="fr-link--icon-left fr-access__link fr-nav__link flex space-between"
+            class="fr-link--icon-left fr-access__link fr-nav__link flex"
             :class="link.icon"
           >
-            <span>{{ link.text }}</span>
-            <DsfrBadge
-              v-if="link.beta"
-              label="BETA"
-              type="success"
-              no-icon
-            />
+            {{ link.text }}
+            <DsfrBadge v-if="link.beta" label="BETA" type="success" no-icon />
           </a>
         </DsfrNavigationMenuItem>
         <DsfrNavigationMenuItem v-if="menu.connexionMenu">
@@ -155,19 +150,20 @@ onBeforeUnmount(() => {});
 </template>
 
 <style scoped lang="scss">
-
-.space-between {
-  align-items: center;
-  justify-content: space-between;
-}
-.justify-center {
-  justify-content: center;
-}
 .w100 {
   width: 100%;
 }
 .flex {
   display: flex;
+}
+
+.fr-access__link {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.fr-access__link :deep(.fr-badge) {
+  margin-left: auto;
 }
 
 .fr-nav__btn-no-dropdown::after {
