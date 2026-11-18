@@ -169,20 +169,30 @@ const closeList = () => {
 // Le panel est téléporté hors du composant (dans <body>),
 // donc on le positionne manuellement à partir de la géométrie du select.
 const updatePanelPosition = () => {
-  if (!triggerRef.value) {
+  if (!triggerRef.value || !panelRef.value) {
     return;
   }
 
   const rect = triggerRef.value.getBoundingClientRect();
+  const margin = 8;
+  const viewportWidth = document.documentElement.clientWidth;
+  const viewportHeight = document.documentElement.clientHeight;
+  const availableBelow = Math.max(0, viewportHeight - Math.max(margin, rect.bottom) - margin);
+  const availableAbove = Math.max(0, Math.min(rect.top, viewportHeight - margin) - margin);
+  const panelHeight = panelRef.value.scrollHeight;
+  const openAbove = availableBelow < panelHeight && availableAbove > availableBelow;
+  const width = Math.min(Math.max(rect.width, 400), Math.max(0, viewportWidth - margin * 2));
+  const left = Math.max(margin, Math.min(rect.left, viewportWidth - width - margin));
 
   panelStyle.value = {
     position: 'fixed',
-    top: `${rect.bottom}px`,
-    left: `${rect.left}px`,
+    top: openAbove ? 'auto' : `${Math.max(margin, rect.bottom)}px`,
+    bottom: openAbove ? `${Math.max(margin, viewportHeight - rect.top)}px` : 'auto',
+    left: `${left}px`,
     zIndex: '10000',
-    width: `${rect.width}px`,
+    width: `${width}px`,
     boxSizing: 'border-box',
-    minWidth: '400px',
+    maxHeight: `${openAbove ? availableAbove : availableBelow}px`,
   };
 };
 
@@ -251,8 +261,8 @@ onBeforeUnmount(() => {
       </label>
 
       <select
-        ref="triggerRef"
         :id="`${componentId}-trigger`"
+        ref="triggerRef"
         class="fr-select"
         :disabled="disabled"
         :aria-expanded="isOpen"
@@ -300,6 +310,7 @@ onBeforeUnmount(() => {
 
         <div
           v-if="filteredOptions.length"
+          class="panel-options"
           :style="{ maxHeight: panelMaxHeight, overflowY: 'auto' }"
         >
           <DsfrCheckboxSet
@@ -322,7 +333,14 @@ onBeforeUnmount(() => {
 </template>
 <style scoped>
 .panel {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
   border: 1px solid var(--border-default-grey);
   background: var(--background-default-grey);
+}
+
+.panel-options {
+  min-height: 0;
 }
 </style>
