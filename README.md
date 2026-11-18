@@ -16,6 +16,17 @@ npm run build
 
 ---
 
+## Tester les composants avec Storybook
+
+- `npm run storybook` ouvre le catalogue sur [localhost:6006](http://localhost:6006). Choisissez un composant dans le menu, puis testez ses variantes ou modifiez ses propriétés dans l’onglet **Controls**.
+- `npx playwright install chromium` installe le navigateur nécessaire aux tests automatisés (à faire une fois par environnement, puis après une mise à jour de Playwright si nécessaire).
+- `npm run test-storybook` exécute les tests d’interaction dans Chromium, sans démarrer Storybook. Le menu d’une story permet de la tester seule ; en CLI, `npm run test-storybook -- CgfrSelectList` teste toutes les variantes de ce composant.
+- `npm run build-storybook` génère un site statique dans `storybook-static/`.
+
+Les dix composants (y compris les deux composants internes de navigation) sont testés depuis leurs sources. Storybook et ses tests ne sont ni exécutés par `npm run build` ni inclus dans le paquet npm publié.
+
+---
+
 ## Déploiement du package
 
 ```bash
