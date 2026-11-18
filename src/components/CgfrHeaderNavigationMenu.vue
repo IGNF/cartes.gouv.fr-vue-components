@@ -110,12 +110,14 @@ onBeforeUnmount(() => {});
         >
           <div v-if="link.button" :id="idx" class="w100">
             <div class="fr-grid-row fr-grid-row--center w100">
-              <button
+              <a
+                :href="link.to"
+                :target="link.target"
                 class="fr-m-3v fr-btn fr-btn--tertiary fr-btn--icon-right w100 justify-center"
-                :class="[{ 'fr-btn--primary': link.primary }]"
+                :class="{ 'fr-btn--primary': link.primary }"
               >
-                <a :href="link.to" :target="link.target">{{ link.text }}</a>
-              </button>
+                {{ link.text }}
+              </a>
             </div>
           </div>
           <a
@@ -152,6 +154,10 @@ onBeforeUnmount(() => {});
 <style scoped lang="scss">
 .w100 {
   width: 100%;
+}
+.justify-center {
+  justify-content: center;
+  text-align: center;
 }
 .flex {
   display: flex;
