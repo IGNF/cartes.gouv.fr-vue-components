@@ -1,6 +1,11 @@
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue';
-import { useCollapsable, DsfrButton, DsfrNavigationMenuItem } from '@gouvminint/vue-dsfr';
+import {
+  useCollapsable,
+  DsfrBadge,
+  DsfrButton,
+  DsfrNavigationMenuItem,
+} from '@gouvminint/vue-dsfr';
 
 const props = defineProps({
   id: {
@@ -122,6 +127,12 @@ onBeforeUnmount(() => {});
             :class="link.icon"
           >
             {{ link.text }}
+            <DsfrBadge
+              v-if="link.beta"
+              label="BETA"
+              type="standard"
+              color-accent="green-emeraude"
+            />
           </a>
         </DsfrNavigationMenuItem>
         <DsfrNavigationMenuItem v-if="menu.connexionMenu">
